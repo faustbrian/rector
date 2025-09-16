@@ -1,0 +1,22 @@
+{
+    "name": "cline/rector",
+    "autoload": {
+        "psr-4": {
+            "Cline\\Rector\\": "src/"
+        }
+    },
+    "authors": [
+        {
+            "name": "Brian Faust",
+            "email": "brian@cline.sh"
+        }
+    ],
+    "require-dev": {
+        "cline/php-cs-fixer": "^1.0"
+    },
+    "require": {
+        "rector/rector": "^2.1",
+        "nikic/php-parser": "^5.6",
+        "symplify/rule-doc-generator": "^12.2"
+    }
+}
