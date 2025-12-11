@@ -1,22 +1,61 @@
 {
-    "name": "cline/rector",
-    "autoload": {
-        "psr-4": {
-            "Cline\\Rector\\": "src/"
-        }
-    },
-    "authors": [
-        {
-            "name": "Brian Faust",
-            "email": "brian@cline.sh"
-        }
-    ],
-    "require-dev": {
-        "cline/php-cs-fixer": "^1.0"
-    },
-    "require": {
-        "rector/rector": "^2.1",
-        "nikic/php-parser": "^5.6",
-        "symplify/rule-doc-generator": "^12.2"
+  "name": "cline/rector",
+  "description": "",
+  "license": "MIT",
+  "authors": [
+    {
+      "name": "Brian Faust",
+      "email": "brian@cline.sh"
     }
+  ],
+  "require": {
+    "php": "^8.5.0",
+    "nikic/php-parser": "^5.6.2",
+    "rector/rector": "^2.2.11",
+    "symplify/rule-doc-generator": "^12.2.5"
+  },
+  "require-dev": {
+    "cline/coding-standard": "^1.5.7",
+    "ergebnis/composer-normalize": "^2.48.2",
+    "orchestra/testbench": "^10.8",
+    "pestphp/pest": "^4.1.6",
+    "pestphp/pest-plugin-laravel": "^4.0",
+    "pestphp/pest-plugin-type-coverage": "^4.0.3",
+    "symfony/var-dumper": "^7.4.0"
+  },
+  "minimum-stability": "stable",
+  "prefer-stable": true,
+  "autoload": {
+    "psr-4": {
+      "Cline\\Rector\\": "src/"
+    }
+  },
+  "autoload-dev": {
+    "psr-4": {
+      "Tests\\": "tests/"
+    }
+  },
+  "config": {
+    "allow-plugins": {
+      "dealerdirect/phpcodesniffer-composer-installer": true,
+      "ergebnis/composer-normalize": true,
+      "pestphp/pest-plugin": true
+    }
+  },
+  "scripts": {
+    "lint": "ecs check --fix",
+    "refactor": "rector",
+    "test": [
+      "@test:lint",
+      "@test:type-coverage",
+      "@test:unit",
+      "@test:types",
+      "@test:refactor"
+    ],
+    "test:lint": "ecs check",
+    "test:refactor": "rector --dry-run",
+    "test:type-coverage": "pest --parallel --min=90 --type-coverage",
+    "test:types": "phpstan",
+    "test:unit": "pest --parallel --min=90 --coverage"
+  }
 }

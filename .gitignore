@@ -1,2 +1,9 @@
+/.phpunit.result.cache
+/.phpunit.cache
+/.php-cs-fixer.cache
+/composer.lock
+/phpunit.xml
 /vendor/
-.php-cs-fixer.cache
+*.swp
+*.swo
+.idea
