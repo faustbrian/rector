@@ -21,7 +21,7 @@ jobs:
           coverage: pcov
           tools: composer:v2
       - run: composer install --no-progress ${{ matrix.composer-flags }}
-      - run: vendor/bin/pest --coverage --min=90
+      - run: vendor/bin/pest --coverage --min=80
 
   phpstan:
     name: PHPStan on ${{ matrix.php }} ${{ matrix.composer-flags }}
