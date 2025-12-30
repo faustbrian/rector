@@ -14,7 +14,7 @@ Thank you for your interest in contributing to this project. We value your contr
 1. Fork the repository to your GitHub account
 2. Clone your fork locally:
    ```bash
-   git clone https://github.com/faustbrian/rector.git
+   git clone https://git.cline.sh/faustbrian/rector.git
    cd rector
    ```
 3. Install dependencies:
